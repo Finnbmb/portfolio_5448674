@@ -1,5 +1,6 @@
 # portfolio_5448674
-#Portfolio-App für das GUI-Modul im SoSe 2025
+# name: Finn Beimborn     e-mail: finn.beimborn@mnd.thm.de
+## Portfolio-App für das GUI-Modul im SoSe 2025
 
 ## Flutter Portfolio App
 Dies ist eine einfache Portfolio-App, entwickelt mit Flutter.
