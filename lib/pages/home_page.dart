@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'slider_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,10 +8,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Portfolio'),
+        title: const Text('Home'),
       ),
-      body: const Center(
-        child: Text('Willkommen im Portfolio von Finn Beimborn'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Willkommen im Portfolio von Finn Beimborn'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SliderPage()),
+                );
+              },
+              child: const Text('Zur SliderPage'),
+            ),
+          ],
+        ),
       ),
     );
   }
