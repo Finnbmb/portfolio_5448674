@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
 
 class SliderPage extends StatefulWidget {
-  const SliderPage({super.key});
+  final double initialValue;
+  const SliderPage({Key? key, required this.initialValue}) : super(key: key);
 
   @override
   State<SliderPage> createState() => _SliderPageState();
 }
 
 class _SliderPageState extends State<SliderPage> {
-  double _sliderValue = 50;
+  late double _sliderValue;
+
+  @override
+  void initState() {
+    super.initState();
+    _sliderValue = widget.initialValue;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Slider Seite"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context, _sliderValue);
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -40,9 +53,16 @@ class _SliderPageState extends State<SliderPage> {
             ),
             const SizedBox(height: 20),
             Container(
-              width: _sliderValue * 2, // verändert sich mit dem Wert
+              width: _sliderValue * 2,
               height: 20,
-              color: Colors.blue.withOpacity(_sliderValue / 100), // transparenter bei niedrigen Werten
+              color: Colors.blue.withOpacity(_sliderValue / 100),
+            ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, _sliderValue);
+              },
+              child: const Text('Speichern und zurück'),
             ),
           ],
         ),
