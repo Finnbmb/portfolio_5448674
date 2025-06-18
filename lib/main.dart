@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
+import 'pages/slider_page.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -21,4 +22,5 @@ class PortfolioApp extends StatelessWidget {
     );
   }
 }
+
 
