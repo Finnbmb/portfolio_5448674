@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'slider_page.dart';
+import 'profile_form_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,6 +25,16 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: const Text('Zur SliderPage'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfileFormPage()),
+                );
+              },
+              child: const Text('Profil bearbeiten'),
             ),
           ],
         ),
